@@ -49,14 +49,19 @@ class LED:
 
 
 class Level:
-	def __init__(self):
-		self.text_layout = [
-			'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW',
-			'WIIIIIIIIIIIIIIIIIIIIIIWIIIIIW',
-			'WIIIIIIIIIWWWIIIIIIIIIIDFIIIIW',
-			'WIIIIIIIIIIKWIIIIIIIIIIWIIIIIW',
-			'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'
-		]
+	def __init__(self, fp="level.txt"):
+		if fp != "level.txt":
+			self.text_layout = [
+				'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW',
+				'WIIIIIIIIIIIIIIIIIIIIIIWIIIIIW',
+				'WIIIIIIIIIWWWIIIIIIIIIIDFIIIIW',
+				'WIIIIIIIIIIKWIIIIIIIIIIWIIIIIW',
+				'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'
+			]
+		else:
+			with open(fp, "r", encoding="utf-8") as f:
+				file = f.readlines()
+			print(file)
 		self.light_layout = []
 		self.wall = LED(is_wall=True)
 		self.inactive = LED(on=False)
