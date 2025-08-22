@@ -14,6 +14,8 @@ Building a quick, easy-to-use maze game and level creator in Python. Will add an
 
 ## Preview
 
-Below is an example of the `game.py` script running.
+Below is an example of the `game.py` and `level-maker.py` scripts running.
 
-![Preview of game.py](preview.gif)
+|                Game                |                      Level Maker                      |
+|------------------------------------|-------------------------------------------------------|
+| ![Preview of game.py](preview-game.gif) | ![Preview of level-maker.py](preview-level-maker.gif) |
