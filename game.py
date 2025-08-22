@@ -22,13 +22,10 @@ def get_key():
 class Game:
   def __init__(self):
     self.x, self.y = 2, 2
-    self.layout = [
-			'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW',
-			'WIIIIIIIIIIIIIIIIIIIIIIWIIIIIW',
-			'WIPIIIIIIIWWWIIIIIIIIIIDFIIIIW',
-			'WIIIIIIIIIIKWIIIIIIIIIIWIIIIIW',
-			'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'
-		]
+    with open("level.txt", "r", encoding="utf-8") as f:
+      layout = f.readlines()
+    layout = [l.strip() for l in layout]
+    self.layout = layout
     self.objects = {"W":"░", "D": "◎", "K": "◉", "P": "●", "I": "◌", "F": "F"}
     self.key_loc, self.door_loc, self.flag_loc = None, None, None
     self.has_key = False
