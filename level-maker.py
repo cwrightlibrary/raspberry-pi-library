@@ -5,6 +5,7 @@ win_width, win_height = 850, 300
 dpg.create_context()
 dpg.create_viewport(title="Level Maker", width=win_width, height=win_height)
 dpg.setup_dearpygui()
+dpg.show_viewport()
 
 btn_names = ["W", "P", "K", "D", "F", ""]
 btns = []
@@ -60,6 +61,5 @@ with dpg.window(tag="main",
 
 dpg.set_item_pos("main", [0, 0])
 
-dpg.show_viewport()
 dpg.start_dearpygui()
 dpg.destroy_context()
